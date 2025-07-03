@@ -219,7 +219,7 @@ const SupportSection = () => {
                     >
                         Message </label
                     ><textarea
-                        rows="4"
+                        rows={4}
                         name="message"
                         id="message"
                         placeholder="Type Message"
