@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-red-500: oklch(.637 .237 25.331);
+    --color-yellow-100: oklch(.973 .071 103.193);
+    --color-slate-50: oklch(.984 .003 247.858);
+    --color-slate-300: oklch(.869 .022 252.894);
+    --color-slate-800: oklch(0.45 0.21 259.02);
+    --color-gray-200: oklch(.928 .006 264.531);
+    --color-gray-400: oklch(.707 .022 261.325);
+    --color-gray-600: oklch(.446 .03 256.802);
+    --color-black: #910a0a;
+    --color-white: #fff;
+    --spacing: .25rem;
+    --container-md: 28rem;
+    --text-xs: .75rem;
+    --text-xs--line-height: calc(1/.75);
+    --text-sm: .875rem;
+    --text-sm--line-height: calc(1.25/.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5/1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75/1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75/1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2/1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25/1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5/2.25);
+    --font-weight-light: 300;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --leading-tight: 1.25;
+    --radius-sm: .25rem;
+    --radius-md: .375rem;
+    --radius-lg: .5rem;
+    --radius-xl: .75rem;
+    --blur-xs: 4px;
+    --blur-sm: 8px;
+    --aspect-video: 16/9;
+    --default-transition-duration: .15s;
+    --default-transition-timing-function: cubic-bezier(.4,0,.2,1);
+    --font-heading: "Lexend",sans-serif;
+    --font-body: "Inter",sans-serif;
+    --color-primary: #4a6cf7;
+    --color-dark-text: #79808a;
+    --color-dark: #1451c2;
+    --color-stroke: #c8371c;
+    --background-image-noise-pattern: url(/NoisePattern.svg);
+    --drop-shadow-light: drop-shadow(0px 1px 5px #0000001a);
+
+    --breakpoint-2xl: initial;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@property --tw-translate-y {
+    syntax: "*";
+    inherits: false;
+    initial-value: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.title {
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    opacity: .2;
+    top: calc(var(--spacing)*0);
+    --tw-translate-x: calc(calc(1/2*100%)*-1);
+    translate: var(--tw-translate-x)var(--tw-translate-y);
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-size: 40px;
+    font-weight: var(--font-weight-extrabold);
+    background: linear-gradient(#4a6cf766,#4a6cf700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    position: absolute;
+    left: 50%;
+    --tw-leading: 1!important;
+    line-height: 1!important
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (width>=540px) {
+    .title {
+        font-size: 60px
+    }
+}
+
+@media (width>=1024px) {
+    .title {
+        font-size: 95px
+    }
+}
+
+
+.header {
+    padding-block: calc(var(--spacing)*5)
 }
